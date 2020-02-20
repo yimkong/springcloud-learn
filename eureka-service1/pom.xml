@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>com.yimkong</groupId>
     <artifactId>eureka-service1</artifactId>
     <dependencies>
         <dependency>
