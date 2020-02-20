@@ -5,14 +5,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * 服务提供方
+ * 服务消费者 //TODO 不能成功实现向注册中心调用接口
  */
 @SpringBootApplication
-@EnableDiscoveryClient
-public class EurekaClientApplication {
+public class EurekaConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaClientApplication.class, args);
+        SpringApplication.run(EurekaConsumerApplication.class, args);
     }
 
 }
