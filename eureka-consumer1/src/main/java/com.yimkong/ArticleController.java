@@ -22,12 +22,11 @@ public class ArticleController {
      */
     @GetMapping("/article/toHello")
     public String hello() {
-        return restTemplate.getForObject("http://yimkong:123456@localhost:8081/user/hello", String.class);
+        return restTemplate.getForObject("http://localhost:8081/user/hello", String.class);
     }
 
     /**
      * 直接通过注册中心调用 使用注册名spring.application.name作为路径
-     * //TODO 不能成功实现向注册中心调用安全认证接口
      * @return
      */
     @GetMapping("/article/toCenterHello")
