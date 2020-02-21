@@ -17,6 +17,7 @@
         <module>eureka-service1</module>
         <module>eureka-service2</module>
         <module>eureka-consumer1</module>
+        <module>eureka-server-cluster</module>
     </modules>
 
     <dependencyManagement>
