@@ -13,6 +13,6 @@ public class UserController {
 
     @GetMapping("user/hello")
     public String hello() {
-        return "hello1";
+        return "hello2";
     }
 }
