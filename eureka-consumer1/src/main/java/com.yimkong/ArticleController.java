@@ -20,7 +20,8 @@ public class ArticleController {
 
     /**
      * 直接调用服务提供方，没有用到注册中心
-     * 因为不是使用别名访问，因此不能使用自动组装的restTemplate(使用了@LoadBalanced注解)
+     * 因为不是使用别名访问，因此不能使用自动组装的restTemplate(因为自动组装的restTemplate使用了@LoadBalanced注解,
+     * 相当于加了个过滤器进行url的识别处理,进行负载均衡调用)
      *
      * @return
      */
