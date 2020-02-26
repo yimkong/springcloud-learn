@@ -20,7 +20,7 @@ public class HouseClientController {
 
     @GetMapping("/call/data")
     public HouseInfo getData(@RequestParam("name") String name) {
-        return restTemplate.getForObject("http://localhost:8082/house/data?name=" + name, HouseInfo.class);
+        return restTemplate.getForObject("http://eureka-client2/house/data?name=" + name, HouseInfo.class);
     }
 
     @GetMapping("/call/data/{name}")
