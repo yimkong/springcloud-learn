@@ -1,6 +1,8 @@
 package com.yimkong;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,8 @@ import org.springframework.web.client.RestTemplate;
 public class HouseClientController {
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private LoadBalancerClient loadBalancerClient;
 
     @GetMapping("/call/data")
     public HouseInfo getData(@RequestParam("name") String name) {
@@ -45,4 +49,13 @@ public class HouseClientController {
         return id;
     }
 
+    /**
+     * 通过ribbon查询一个服务的地址
+     * @return
+     */
+    @GetMapping("/choose")
+    public Object info() {
+        ServiceInstance choose = loadBalancerClient.choose("eureka-client2");
+        return choose;
+    }
 }
